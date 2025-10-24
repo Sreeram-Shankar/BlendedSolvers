@@ -9,18 +9,22 @@ All codes are self-contained, transparent, and written for research clarity.
 
 ## 🌟 Concept
 
-Classical ODE solvers adapt **step size** \(h\) to handle stiffness.  
+Classical ODE solvers adapt **step size** *h* to handle stiffness.  
 **BlendedSolvers** instead adapt **method form**:
 
-\[
-a(\sigma) = \frac{\sigma^p}{1+\sigma^p}, \qquad
-y_{n+1} = (1-a)\,\Phi_A(y_n,h) + a\,\Phi_B(y_n,h)
-\]
+```math
+a(σ) = σ^p / (1 + σ^p)
+```
+
+```math
+yₙ₊₁ = (1 - a) · Φ_A(yₙ, h) + a · Φ_B(yₙ, h)
+```
 
 where  
-- \( \Phi_A, \Phi_B \) are complete implicit update operators,  
-- \( \sigma \) is a stiffness proxy computed from local \(f\) and \(y\) differences,  
-- \( a(\sigma) \) smoothly varies from 0 → 1 as stiffness increases.
+- **Φ<sub>A</sub>, Φ<sub>B</sub>** are complete implicit update operators,  
+- **σ** is a stiffness proxy computed from local *f* and *y* differences,  
+- **a(σ)** smoothly varies from 0 → 1 as stiffness increases.
+
 
 This creates a continuous family of solvers interpolating between *non-stiff* and *stiff* regimes — a new axis of adaptivity orthogonal to step-size control.
 
