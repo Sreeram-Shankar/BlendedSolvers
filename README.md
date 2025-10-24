@@ -1,6 +1,6 @@
 # 🧮 BlendedSolvers
 
-**BlendedSolvers** is a compact research library (≈700 lines total) introducing a **new type of implicit ODE integrators** based on local stiffness rather than changing the timestep.
+**BlendedSolvers** is a compact research library introducing an **experimental type of implicit ODE integrators** based on local stiffness rather than changing the timestep.
 
 Each solver blends two fully implicit integrators (e.g., BDF, Gauss–Legendre, Radau, Lobatto, ESDIRK) using a smooth stiffness-dependent weight function.  
 All codes are self-contained, transparent, and written for research clarity.
