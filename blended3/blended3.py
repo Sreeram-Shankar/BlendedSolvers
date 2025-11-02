@@ -29,7 +29,7 @@ def newton_solve(residual, y0, jac=None, tol=1e-10, max_iter=12):
 
 
 #defines the sdirk(4,3) coefficients
-gamma = 0.435866521508458999416019  # common diagonal
+gamma = 0.435866521508458999416019  
 A_sdirk = np.array([
     [gamma, 0, 0, 0],
     [0.5 - gamma, gamma, 0, 0],
